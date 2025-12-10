@@ -3,8 +3,8 @@
 #include <string.h>
 
 void startEngine(const char *carName) { printf("%s: Engine started!\n", carName); }
-void carAccelerate(const char *carName) { printf("%s: Car: Pressing gas pedal...\n", carName); }
-void carBrake(const char *carName) { printf("%s: Car: Applying brakes...\n", carName); }
+void carAccelerate(const char *carName) { printf("%s: Pressing gas pedal...\n", carName); }
+void carBrake(const char *carName) { printf("%s: Applying brakes...\n", carName); }
 
 typedef struct {
     char name[50];
@@ -31,21 +31,12 @@ Car *createCar(const char *name) {
 int main() {
 
     // exmaple case
-    Car *janesCar = createCar("Jane's car");
-    janesCar->startEngine(janesCar->name);
-    janesCar->accelerate(janesCar->name);
-    janesCar->brake(janesCar->name);
+    Car *myCar = createCar("myCar");
+    myCar->startEngine(myCar->name);
+    myCar->accelerate(myCar->name);
+    myCar->brake(myCar->name);
 
-    printf("\n");
-
-    // example case
-    Car *jacksCar = createCar("Jack's car");
-    jacksCar->startEngine(jacksCar->name);
-    jacksCar->accelerate(jacksCar->name);
-    jacksCar->brake(jacksCar->name);
-
-    free(janesCar);
-    free(jacksCar);
+    free(myCar);
 
     return 0;
 }
